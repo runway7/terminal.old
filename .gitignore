@@ -5,3 +5,4 @@ eggs/
 app/lib/dist/
 app/css/.sass-cache
 *.pyc
+.DS_Store
