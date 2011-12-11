@@ -3,3 +3,5 @@ var/
 bin/
 eggs/
 app/lib/dist/
+app/css/.sass-cache
+*.pyc

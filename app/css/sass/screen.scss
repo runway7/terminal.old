@@ -1,0 +1,112 @@
+
+@import "normalize";
+@import "compass/css3";
+
+$base: #666;
+$headings: #203E42;
+$links: #6B0236;
+
+$gr: 1.618;
+$gr1: $gr * 1em;
+$gr2: $gr * $gr1;
+$gr3: $gr * $gr2;
+
+body {
+  font-size: 16px;
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 1.618em;
+  background: url(/stylesheets/images/concrete_wall_3.png) fixed;
+  color: $base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $headings;
+  text-transform: uppercase;
+}
+
+a {  
+  color: $links;
+  &:visited, &:active{
+    color: $links;
+  }
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+#container {
+  width: 40em;
+  margin: $gr2 auto;
+}
+
+header {
+  a {
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    font-family: 'Play', sans-serif;  
+    text-align: right;
+  }
+  margin-bottom: $gr2;
+  .tagline {
+    font-size: $gr1;
+    color: $links;
+    margin: $gr1 0;
+    text-align: center;
+  }
+}
+
+#main {
+  border: thin solid rgba(200,200,200,0.6);
+  background: rgba(200,200,200,0.2);
+  @include border-radius(0.6em);
+  padding: 0 $gr2;
+  @include single-box-shadow(rgba(0,0,0,0.2), -1px, 1px, 5px, 0px, inset);
+}
+
+section.app {
+  padding: $gr1;
+  @include border-radius(0.5em);
+  text-align: center;
+  border-bottom: thin solid rgba(200,200,200,0.9);
+  overflow: hidden;
+  height: 3.618em;
+  @include transition-property(all);
+  @include transition-duration(0.3s);
+  
+  &:last-child{
+    border-bottom: none;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Play';
+    margin: 0;
+    margin-bottom: 0.381em;    
+  }
+  p {
+    margin:0;
+  }
+  .info {
+    @include transition-property(all);
+    @include transition-duration(0.3s);
+    @include box-sizing(border-box);
+    margin: $gr1 0;
+    @include translateX(-5em);
+    @include opacity(0);
+  }
+  &:hover {
+    height: 10.618em;
+    .info {    
+      @include translateX(0);
+      @include opacity(1);
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  margin: $gr1 0;
+}
