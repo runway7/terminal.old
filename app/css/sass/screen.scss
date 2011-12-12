@@ -3,8 +3,8 @@
 @import "compass/css3";
 
 $base: #666;
-$headings: #203E42;
-$links: #6B0236;
+$headings: #333;
+$links: #000;
 
 $gr: 1.618;
 $gr1: $gr * 1em;
@@ -81,12 +81,14 @@ section.app {
   &:last-child{
     border-bottom: none;
   }
-  h1, h2, h3, h4, h5 {
+  .heading {
     font-family: 'Play';
     margin: 0;
     margin-bottom: 0.381em;    
   }
-  p {
+  .tagline {
+    @include transition-property(all);
+    @include transition-duration(0.3s);    
     margin:0;
   }
   .info {
@@ -98,7 +100,10 @@ section.app {
     @include opacity(0);
   }
   &:hover {
-    height: 10.618em;
+    height: 10.381em;
+    .tagline{
+      color: $headings;
+    }
     .info {    
       @include translateX(0);
       @include opacity(1);

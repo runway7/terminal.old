@@ -451,18 +451,18 @@ body {
 
 /* line 22, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
-  color: #203e42;
+  color: #333333;
   text-transform: uppercase;
 }
 
 /* line 27, ../sass/screen.scss */
 a {
-  color: #6b0236;
+  color: black;
   text-decoration: none;
 }
 /* line 29, ../sass/screen.scss */
 a:visited, a:active {
-  color: #6b0236;
+  color: black;
 }
 /* line 33, ../sass/screen.scss */
 a:hover {
@@ -492,7 +492,7 @@ header h1 {
 /* line 55, ../sass/screen.scss */
 header .tagline {
   font-size: 1.618em;
-  color: #6b0236;
+  color: black;
   margin: 1.618em 0;
   text-align: center;
 }
@@ -536,16 +536,22 @@ section.app:last-child {
   border-bottom: none;
 }
 /* line 84, ../sass/screen.scss */
-section.app h1, section.app h2, section.app h3, section.app h4, section.app h5 {
+section.app .heading {
   font-family: 'Play';
   margin: 0;
   margin-bottom: 0.381em;
 }
 /* line 89, ../sass/screen.scss */
-section.app p {
+section.app .tagline {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   margin: 0;
 }
-/* line 92, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 section.app .info {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -564,11 +570,15 @@ section.app .info {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 100, ../sass/screen.scss */
-section.app:hover {
-  height: 10.618em;
-}
 /* line 102, ../sass/screen.scss */
+section.app:hover {
+  height: 10.381em;
+}
+/* line 104, ../sass/screen.scss */
+section.app:hover .tagline {
+  color: #333333;
+}
+/* line 107, ../sass/screen.scss */
 section.app:hover .info {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -578,7 +588,7 @@ section.app:hover .info {
   opacity: 1;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 footer {
   text-align: center;
   margin: 1.618em 0;
