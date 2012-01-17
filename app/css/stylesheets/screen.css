@@ -509,6 +509,7 @@ header .tagline {
   padding: 0 2.618em;
   -webkit-box-shadow: inset -1px 1px 5px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset -1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: inset -1px 1px 5px 0px rgba(0, 0, 0, 0.2);
   box-shadow: inset -1px 1px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -526,9 +527,11 @@ section.app {
   height: 3.618em;
   -webkit-transition-property: all;
   -moz-transition-property: all;
+  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 /* line 81, ../sass/screen.scss */
@@ -545,9 +548,11 @@ section.app .heading {
 section.app .tagline {
   -webkit-transition-property: all;
   -moz-transition-property: all;
+  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   margin: 0;
 }
@@ -555,34 +560,39 @@ section.app .tagline {
 section.app .info {
   -webkit-transition-property: all;
   -moz-transition-property: all;
+  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   margin: 1.618em 0;
   -webkit-transform: translateX(-5em);
   -moz-transform: translateX(-5em);
   -ms-transform: translateX(-5em);
+  -o-transform: translateX(-5em);
   transform: translateX(-5em);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 /* line 102, ../sass/screen.scss */
-section.app:hover {
+section.app:hover, section.app:active {
   height: 10.381em;
 }
 /* line 104, ../sass/screen.scss */
-section.app:hover .tagline {
+section.app:hover .tagline, section.app:active .tagline {
   color: #333333;
 }
 /* line 107, ../sass/screen.scss */
-section.app:hover .info {
+section.app:hover .info, section.app:active .info {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;

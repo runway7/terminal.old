@@ -99,7 +99,7 @@ section.app {
     @include translateX(-5em);
     @include opacity(0);
   }
-  &:hover {
+  &:hover, &:active {
     height: 10.381em;
     .tagline{
       color: $headings;
