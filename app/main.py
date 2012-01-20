@@ -20,5 +20,6 @@ def handle(route):
     return handler
         
 application = webapp.WSGIApplication([
+        ('/signs', handle('signs')),
         ('/', handle('index'))
     ], debug=True)

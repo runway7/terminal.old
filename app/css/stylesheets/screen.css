@@ -440,56 +440,61 @@ table {
   border-spacing: 0;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 body {
   font-size: 16px;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: "Droid Sans", sans-serif;
   line-height: 1.618em;
   background: url(/stylesheets/images/concrete_wall_3.png) fixed;
   color: #666666;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #333333;
   text-transform: uppercase;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 a {
   color: black;
   text-decoration: none;
 }
-/* line 29, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 a:visited, a:active {
   color: black;
 }
-/* line 33, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
+code {
+  font-family: "Droid Sans Mono", monospace;
+}
+
+/* line 46, ../sass/screen.scss */
 #container {
   width: 40em;
   margin: 2.618em auto;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 header {
   margin-bottom: 2.618em;
 }
-/* line 45, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 header a:hover {
   text-decoration: none;
 }
-/* line 49, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 header h1 {
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
   text-align: right;
 }
-/* line 55, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 header .tagline {
   font-size: 1.618em;
   color: black;
@@ -497,7 +502,7 @@ header .tagline {
   text-align: center;
 }
 
-/* line 63, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 #main {
   border: thin solid rgba(200, 200, 200, 0.6);
   background: rgba(200, 200, 200, 0.2);
@@ -513,7 +518,7 @@ header .tagline {
   box-shadow: inset -1px 1px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 71, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 section.app {
   padding: 1.618em;
   -webkit-border-radius: 0.5em;
@@ -534,17 +539,17 @@ section.app {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 81, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 section.app:last-child {
   border-bottom: none;
 }
-/* line 84, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 section.app .heading {
   font-family: 'Play';
   margin: 0;
   margin-bottom: 0.381em;
 }
-/* line 89, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 section.app .tagline {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -556,7 +561,7 @@ section.app .tagline {
   transition-duration: 0.3s;
   margin: 0;
 }
-/* line 94, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 section.app .info {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -570,7 +575,7 @@ section.app .info {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 1.618em 0;
+  margin: 0.618em 0;
   -webkit-transform: translateX(-5em);
   -moz-transform: translateX(-5em);
   -ms-transform: translateX(-5em);
@@ -579,15 +584,15 @@ section.app .info {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 102, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 section.app:hover, section.app:active {
-  height: 10.381em;
+  height: 8.618em;
 }
-/* line 104, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 section.app:hover .tagline, section.app:active .tagline {
   color: #333333;
 }
-/* line 107, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 section.app:hover .info, section.app:active .info {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -598,8 +603,61 @@ section.app:hover .info, section.app:active .info {
   opacity: 1;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 footer {
   text-align: center;
   margin: 1.618em 0;
+}
+
+/* line 127, ../sass/screen.scss */
+.documentation {
+  margin: 2.618em 0;
+}
+/* line 129, ../sass/screen.scss */
+.documentation p {
+  margin: 1.618em 0;
+}
+/* line 132, ../sass/screen.scss */
+.documentation h4 {
+  margin: 2.618em 0 1.618em;
+}
+/* line 135, ../sass/screen.scss */
+.documentation .example {
+  font-size: 0.8em;
+  border: thin solid rgba(100, 100, 100, 0.3);
+  -webkit-border-radius: 0.618em;
+  -moz-border-radius: 0.618em;
+  -ms-border-radius: 0.618em;
+  -o-border-radius: 0.618em;
+  border-radius: 0.618em;
+  background: rgba(245, 245, 245, 0.381);
+}
+/* line 140, ../sass/screen.scss */
+.documentation .example .info {
+  position: absolute;
+  right: 0.618em;
+  top: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-family: "Droid Sans", sans-serif;
+}
+/* line 148, ../sass/screen.scss */
+.documentation .example > section {
+  position: relative;
+  padding: 1em;
+  border-bottom: thin solid rgba(100, 100, 100, 0.3);
+}
+/* line 149, ../sass/screen.scss */
+.documentation .example > section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 157, ../sass/screen.scss */
+.documentation .example > section:last-child {
+  border-bottom: none;
+}
+/* line 163, ../sass/screen.scss */
+.documentation .example code pre {
+  margin: 0;
 }

@@ -10,10 +10,14 @@ $gr: 1.618;
 $gr1: $gr * 1em;
 $gr2: $gr * $gr1;
 $gr3: $gr * $gr2;
+$gs1: 1em / $gr;
+
+$basefont: 'Droid Sans', sans-serif;
+$monofont: 'Droid Sans Mono', monospace;
 
 body {
   font-size: 16px;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: $basefont;
   line-height: 1.618em;
   background: url(/stylesheets/images/concrete_wall_3.png) fixed;
   color: $base;
@@ -35,6 +39,10 @@ a {
   }
 }
 
+code {
+  font-family: $monofont;
+}
+
 #container {
   width: 40em;
   margin: $gr2 auto;
@@ -49,7 +57,7 @@ header {
   h1 {
     text-transform: uppercase;
     font-family: 'Play', sans-serif;  
-    text-align: right;
+    text-align: right;    
   }
   margin-bottom: $gr2;
   .tagline {
@@ -95,12 +103,12 @@ section.app {
     @include transition-property(all);
     @include transition-duration(0.3s);
     @include box-sizing(border-box);
-    margin: $gr1 0;
+    margin: $gs1 0;
     @include translateX(-5em);
     @include opacity(0);
   }
   &:hover, &:active {
-    height: 10.381em;
+    height: 8.618em;
     .tagline{
       color: $headings;
     }
@@ -114,4 +122,48 @@ section.app {
 footer {
   text-align: center;
   margin: $gr1 0;
+}
+
+.documentation {
+  margin: $gr2 0;
+  p {
+    margin: $gr1 0;
+  }
+  h4 {
+    margin: $gr2 0 $gr1;
+  }  
+  .example {
+    font-size: 0.8em;
+    border: thin solid rgba(100,100,100,0.3);    
+    @include border-radius(0.618em);
+    background: rgba(245,245,245,0.381);
+    .info {      
+      position: absolute;
+      right: $gs1;
+      top: 0;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-family: $basefont;      
+    }
+    & > section{
+      ul {        
+        list-style: none;                
+        padding: 0;
+        margin: 0;
+      }
+      position: relative;
+      padding: 1em;      
+      border-bottom: thin solid rgba(100,100,100,0.3);
+      &:last-child{
+        border-bottom: none;
+      }
+    }    
+    
+    code {             
+      pre {         
+        margin: 0;
+      }
+    }
+    
+  }
 }

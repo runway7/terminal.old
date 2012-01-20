@@ -15,16 +15,14 @@
     _gaq.push(['_setDomainName', 'runway7.net']);
     _gaq.push(['_trackPageview']);
     var WebFontConfig = {
-      google: { families: [ 'Ubuntu:400,700,400italic,700italic:latin','Ubuntu+Mono:400,700,400italic,700italic', 'Play:400,700', 'Droid+Sans:400,700'] }
+      google: { families: [ 'Play:400,700', 'Droid+Sans:400,700','Droid+Sans+Mono'] }
     };    
   </script>
   </head>
   <body>
     <div id="container">
-      <header>
-        <a href="/">
-          <h1>Runway 7</h1>
-        </a>
+      <header>                
+        <h1>{% block headercrumb %}{% endblock %}<a href="/">Runway 7</a></h1>        
         {% block header %}{% endblock %}
       </header>
       <div id="main" role="main">{% block content %}{% endblock %}</div>

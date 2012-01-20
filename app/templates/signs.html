@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block headercrumb %}
+<a href="/signs">Signs</a>
+. {% endblock %}
+{% block content %}
+<section class="documentation">
+	<p>
+		Signs is a JSON API that helps you painlessly manage all of your images. We take care of storage, resizing, optimization, hosting and serving, so you can focus on actually creating your app.
+	</p>
+	<p> <strong>Signs is currently in ALPHA, so while you can test the service and API, we will cap bandwidth and delete all images periodically. Please do not use the API in a production environment right now.</strong> 
+	</p>
+	<p>
+		The endpoint for all API calls is <strong>http://signs.runway7.net/</strong>
+		.
+		HTTPS isn't active right now,  but will be mandatory soon.
+	</p>
+	<p>
+		Please treat all returned keys and IDs as strings, even if they look like numbers right now.
+	</p>
+	<h4>Authentication</h4>
+	<p>
+		While in alpha, all accounts are anonymous and free. You can just
+		<a href="http://signs.runway7.net/testing/create">grab a set of credentials</a>
+		at the testing endpoint:
+	</p>
+	<section class="example">
+		<section>
+			<span class="info">endpoint</span>
+			<code>/testing/create</code>
+		</section>
+		<section>
+			<span class="info">method</span>
+			<code>GET</code>
+		</section>
+		<section>
+			<span class="info">response</span>
+			<code><pre>
+{
+   "secret_key":"75207b64011aeee96c4ff1c3b6a0a6fd76cbbcd7",
+   "client_id":"12001"
+}			</pre></code>
+		</section>
+	</section>
+	<h4>Uploading images</h4>
+	<p>
+		Upload your images by simply sending a
+		<code>POST</code>
+		with the binary image data to the upload endpoint. You need to set your
+		<code>client_id</code>
+		and
+		<code>secret_key</code>
+		as headers in the request. Please refer to the documentation of your particular HTTP library for details on how to set headers and send raw binary data.
+	</p>
+	<p>A successful upload will return a JSON response containing the <code>image_key</code>. This is the key that identifies the image and will be used when serving it.</p>
+	<section class="example">
+		<section>
+			<span class="info">endpoint</span>
+			<code>/api/v1/upload</code>
+		</section>
+		<section>
+			<span class="info">method</span>
+			<code>POST</code>
+		</section>
+		<section>
+			<span class="info">post parameters</span>
+			<ul>
+				<li>
+					<code>image</code>
+					: <em>binary image data</em>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<span class="info">required headers</span>
+			<ul>
+				<li>
+					<code>SIGNS_CLIENT_ID</code>
+					: <em>Your client id</em>
+				</li>
+				<li>
+					<code>SIGNS_SECRET_KEY</code>
+					:
+					<em>Your secret key</em>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<span class="info">response</span>
+			<code><pre>
+{
+   "image_key":"agtzfmhhbmdhci1yN3IlCxIE"   
+}			</pre></code>
+		</section>
+	</section>
+	<h4>serving images</h4>
+	<p>
+		You can serve images by just setting the
+		<code>src</code>
+		of an image to the serving endpoint. Using the URL as it is will serve the image as it was uploaded; you can pass in additional query parameters that act as modifiers.
+	</p>
+	<section class="example">
+		<section>
+			<span class="info">endpoint</span>
+			<code>/api/v1/serve/&lt;client_id&gt;/&lt;image_key&gt;</code>
+		</section>
+		<section>
+			<span class="info">method</span>
+			<code>GET</code>
+		</section>
+		<section>
+			<span class="info">URL parts</span>
+			<ul>
+				<li>
+					<code>client_id</code>
+					:
+					<em>Your client ID</em>
+				</li>
+				<li>
+					<code>image_key</code>
+					:
+					<em>The key returned on image upload</em>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<span class="info">optional query params</span>
+			<ul>
+				<li>
+					<code>width</code>
+					:
+					<em>width of the image, in pixels</em>
+				</li>
+				<li>
+					<code>height</code>
+					:
+					<em>height of the image, in pixels</em>
+				</li>
+				<li>
+					<code>format</code>
+					:
+					<em>image format. Options are 'JPEG' (default), 'PNG' and 'WEBP'</em>
+				</li>
+			</ul>
+		</section>		
+	</section>
+	<p>If none of the optional parameters are provided, the original image is served as it was uploaded, without any modifications. Specifying either a width or a height will create a thumbnail in that size for you and serve it. <strong>The image is scaled proportionally, so it's original aspect ratio is always maintained.</strong></p>		
+	<p>If both the width and the height are provided, they are used as a bounding box; the image will be scaled proportionally in such a way that it would just fit inside a rectangle of that width and height.</p>
+
+	<p><em>The first time a certain set of options is used to serve an image, the API will take a little longer to load, process and cache the generated image. Subsequent requests will be served directly from the cache and run much faster.</em></p>
+	<h4>Pricing</h4>
+	<p>Signs will use a very simple per GB cost structure. Your consumption will simply be GBs sent in + GBs downloaded + GBs stored. When the API moves to beta, pricing is probably going to be <strong>USD $0.50 per GB per month</strong>, but that should fall rapidly as the service grows and the servers start to run at full capacity.</p>
+	<h4>Current Limitations</h4>
+	<ul>
+	<li>Image (and generated thumbnails) need to be less than 32MB in size. We may support larger images in the future, but not right now.</li>		
+	</ul>
+</section>
+{% endblock %}
