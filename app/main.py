@@ -21,5 +21,11 @@ def handle(route):
         
 application = webapp.WSGIApplication([
         ('/signs', handle('signs')),
+        ('/blip', handle('blip')),
+        ('/controller', handle('controller')),
+        ('/radar', handle('radar')),
+        ('/satellite', handle('satellite')),
+        ('/searchlight', handle('searchlight')),
+        ('/switchboard', handle('switchboard')),
         ('/', handle('index'))
     ], debug=True)

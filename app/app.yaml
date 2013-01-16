@@ -11,6 +11,9 @@ handlers:
 
 - url: /stylesheets
   static_dir: css/stylesheets/
+
+- url: /scripts
+  static_dir: scripts/  
   
 - url: /.*
   script: main.application

@@ -1,6 +1,7 @@
 
-@import "normalize";
 @import "compass/css3";
+@import "styles";
+@import "prettify";
 
 $base: #666;
 $headings: #333;
@@ -12,13 +13,15 @@ $gr2: $gr * $gr1;
 $gr3: $gr * $gr2;
 $gs1: 1em / $gr;
 
-$basefont: 'Droid Sans', sans-serif;
-$monofont: 'Droid Sans Mono', monospace;
+$basefont: 'Ubuntu', sans-serif;
+$condensed: 'Ubuntu Condensed', sans-serif;
+$monofont: 'Ubuntu Mono', monospace;
+$headfont: 'Play';
 
 body {
   font-size: 16px;
   font-family: $basefont;
-  line-height: 1.618em;
+  line-height: 1.618;
   background: url(/stylesheets/images/concrete_wall_3.png) fixed;
   color: $base;
 }
@@ -26,6 +29,26 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $headings;
   text-transform: uppercase;
+  font-family: $headfont;
+}
+
+
+.tagline {   
+    font-family: $condensed;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+header {
+  // text-align: center;
+  .tagline {
+    font-size: 1.618rem;    
+  }
+  border-bottom: thin solid #ccc;
+  padding: 1.618rem;
+  padding-bottom: 2.381rem;
+  margin-bottom: 1.618rem;
+  background: rgba(0,0,0,0.05);
 }
 
 a {  
@@ -39,131 +62,85 @@ a {
   }
 }
 
+.app {
+  display: block;
+  &:hover{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .heading{
+    // text-align: center;
+    margin-bottom: 0;
+    color: $headings;
+  }
+  .tagline {
+    // text-align: center;
+    font-size: 1.381rem;    
+    color: $base;
+  }
+  .info {
+    height: 0;
+    overflow: hidden;
+  }
+  &:hover {
+    .info {
+      
+
+    }
+  }
+  margin-bottom: 1.618rem;
+  padding-bottom: 1.618rem;
+  border-bottom: thin solid #ccc;
+}
+
 code {
   font-family: $monofont;
 }
 
-#container {
-  width: 40em;
-  margin: $gr2 auto;
-}
-
-header {
-  a {
-    &:hover{
-      text-decoration: none;
-    }
-  }
-  h1 {
-    text-transform: uppercase;
-    font-family: 'Play', sans-serif;  
-    text-align: right;    
-  }
-  margin-bottom: $gr2;
-  .tagline {
-    font-size: $gr1;
-    color: $links;
-    margin: $gr1 0;
-    text-align: center;
-  }
-}
-
-#main {
-  border: thin solid rgba(200,200,200,0.6);
-  background: rgba(200,200,200,0.2);
-  @include border-radius(0.6em);
-  padding: 0 $gr2;
-  @include single-box-shadow(rgba(0,0,0,0.2), -1px, 1px, 5px, 0px, inset);
-}
-
-section.app {
-  padding: $gr1;
-  @include border-radius(0.5em);
-  text-align: center;
-  border-bottom: thin solid rgba(200,200,200,0.9);
-  overflow: hidden;
-  height: 3.618em;
-  @include transition-property(all);
-  @include transition-duration(0.3s);
-  
-  &:last-child{
-    border-bottom: none;
-  }
-  .heading {
-    font-family: 'Play';
-    margin: 0;
-    margin-bottom: 0.381em;    
-  }
-  .tagline {
-    @include transition-property(all);
-    @include transition-duration(0.3s);    
-    margin:0;
-  }
-  .info {
-    @include transition-property(all);
-    @include transition-duration(0.3s);
-    @include box-sizing(border-box);
-    margin: $gs1 0;
-    @include translateX(-5em);
-    @include opacity(0);
-  }
-  &:hover, &:active {
-    height: 8.618em;
-    .tagline{
-      color: $headings;
-    }
-    .info {    
-      @include translateX(0);
-      @include opacity(1);
-    }
-  }
-}
-
 footer {
-  text-align: center;
-  margin: $gr1 0;
+  
 }
 
-.documentation {
-  margin: $gr2 0;
-  p {
-    margin: $gr1 0;
+.details {
+  strong {
+    font-weight: 500;
   }
-  h4 {
-    margin: $gr2 0 $gr1;
-  }  
-  .example {
-    font-size: 0.8em;
-    border: thin solid rgba(100,100,100,0.3);    
-    @include border-radius(0.618em);
-    background: rgba(245,245,245,0.381);
-    .info {      
-      position: absolute;
-      right: $gs1;
-      top: 0;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      font-family: $basefont;      
+  ul li {
+    line-height: 1.618;
+  }
+  a {
+    border-bottom: thin dotted #333;
+    color: inherit;
+    &:hover{
+      color: $links;
+      text-decoration: none;
+      border-bottom: thin solid #333;
     }
-    & > section{
-      ul {        
-        list-style: none;                
-        padding: 0;
-        margin: 0;
-      }
-      position: relative;
-      padding: 1em;      
-      border-bottom: thin solid rgba(100,100,100,0.3);
-      &:last-child{
-        border-bottom: none;
-      }
-    }    
-    
-    code {             
-      pre {         
-        margin: 0;
+  }
+  .column {
+    .piece {
+      margin-bottom: 2.618rem;
+      h4 {
+        margin-bottom: 1.168rem;
       }
     }
-    
   }
+}
+
+.code {
+  overflow-x :auto;
+  margin: 1.618rem 0;
+  pre.prettyprint {
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    border: none;
+    padding: 0.618rem;
+    margin: 0;
+  }
+}
+
+code {
+  font-size: 1em;
 }

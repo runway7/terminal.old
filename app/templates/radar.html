@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block headercrumb %}<a href="/radar">Radar</a>&nbsp;.&nbsp;{% endblock %}
+{% block header %}
+<div class="tagline">Webpage Metadata API</div>
+{% endblock %}
+{% block content %}
+<div class="row details">
+  <div class="span8 column">
+    <div class="piece">
+      <h4>What is Radar?</h4>
+      <p>
+        The Radar service is a fast JSON API that gives you meta information about any URL that you pass in. This includes basic details like the title and the description, and more advanced information like the Open Graph and Twitter Card attributes. Here's an example result for
+        <a href="http://thenextweb.com/media/2013/01/15/quoras-top-writers-book-2010-2012-is-now-available-download-for-free/">an article at The Next Web</a>:
+      </p>
+      <div class="code"><pre class="prettyprint">GET http://radar.runway7.net?url=http://thenextweb.com/media/2013/01/15/quoras-top-writers-book-2010-2012-is-now-available-download-for-free/</pre></div>
+      <div class="code">
+        <pre class="prettyprint lang-js well">
+{
+  "description":"Back in October, we reported on Quora's attempts at recognizing around 500 of its most valuable users with its new Top Writers badge.\r\n\r\nThe move was largely taken to recognize Quora's ...",
+  "author":"Paul Sawers",
+  "url":"http://thenextweb.com/media/2013/01/15/quoras-top-writers-book-2010-2012-is-now-available-download-for-free/",
+  "image":"http://cdn.thenextweb.com/wp-content/blogs.dir/1/files/2013/01/BestofQuora2-300x250.jpg",
+  "shortlink":"http://thenextweb.com/?p=547260",
+  "og":{
+    "site_name":"The Next Web",
+    "image":"http://cdn.thenextweb.com/wp-content/blogs.dir/1/files/2013/01/BestofQuora2-300x250.jpg",
+    "type":"article",
+    "description":"Back in October, we reported on Quora's attempts at recognizing around 500 of its most valuable users with its new Top Writers badge.\r\n\r\nThe move was largely taken to recognize Quora's ...",
+    "title":"More than 100 of Quora\u2019s all-time best answers are now available as a free, 400-page PDF book"
+  },
+  "keywords":null,
+  "title":"Quora Top Writers Book is Now Free to Download",
+  "twitter":{
+    "description":"Back in October, we reported on Quora\u2019s attempts at recognizing around 500 of its most valuable users with its new Top Writers badge. The move was largely taken to recognize... Keep reading \u2192",
+    "creator":"@psawers",
+    "url":"http://thenextweb.com/media/2013/01/15/quoras-top-writers-book-2010-2012-is-now-available-download-for-free/",
+    "image":"http://thenextweb.com/wp-content/blogs.dir/1/files/2013/01/BestofQuora2-220x125.jpg",
+    "title":"Quora Top Writers Book is Now Free to Download",
+    "site":"@thenextweb",
+    "card":"summary"
+  },
+  "canonical":"http://thenextweb.com/media/2013/01/15/quoras-top-writers-book-2010-2012-is-now-available-download-for-free/"
+}</pre>
+      </div>
+    </div>
+    <div class="piece">
+      <h4>Documentation</h4>      
+      <div class="code"><pre class="prettyprint">GET http://radar.runway7.net?url=[[URL]]</pre></div>      
+      <p>For the full repsonse structure, refer to the README at <a href="https://github.com/runway7/radar">github.com/runway7/radar</a>. You can also file feature requests and bug reports on the <a href="https://github.com/runway7/radar/issues">issues page</a>.</p>
+    </div>
+  </div>
+  <div class="span4 column">
+    <div class="piece">
+      <h4>What does it cost?</h4>
+      <p>
+        Radar API calls are priced at <strong>USD $1 per 10,000</strong>
+        calls. Forced refreshes at priced at USD $1 for 100 refreshes.
+      </p>
+    </div>
+    <div class="piece">
+      <h4>What can I do with it?</h4>
+      <ul>
+        <li>
+          Show webpage info and thumbnails when users try to share links
+        </li>
+        <li>
+          See your page through the eyes of Facebook, Google and Twitter
+        </li>
+        <li>
+          Test social integration
+        </li>
+        <li>
+          Provide richer bookmarks
+        </li>
+        <li>
+          Website Research and Analysis
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
