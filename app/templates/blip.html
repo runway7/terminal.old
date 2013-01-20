@@ -9,20 +9,30 @@
     <div class="piece">
       <h4>What is Blip?</h4>
       <p>
-        The Blip service is a fast JSON API that gives you meta information about the client that you make the request from, including geolocation and browser identification.</p>        
+        The Blip service is a fast JSON API that gives you meta information about the client that you make the request from, including geolocation and browser identification (coming soon).</p>        
     </div>
     <div class="piece">
       <h4>Documentation</h4>            
       <div class="code"><pre class="prettyprint">GET http://blip.runway7.net</pre></div>      
-      <p>That's it, actually. For the full repsonse structure, refer to the README at <a href="https://github.com/runway7/blip">github.com/runway7/blip</a>. You can also file feature requests and bug reports on the <a href="https://github.com/runway7/blip/issues">issues page</a>.</p>
-      <p>You can simply call the API from a user's browser and either act on the data or pass it back to your server. We make no guarantees about the accuracy of the geolocation, but we've found to be useful and quite precise.</p>
+      <p>Here's what the response looks like when called right now, from your browser:</p>
+      <div class="code"><pre class="prettyprint" id="blip_example_response"></pre></div>
+      <script>
+        $.getJSON('http://blip.runway7.net').done(function(data){
+          $(function(){
+            $('#blip_example_response').html(JSON.stringify(data, undefined, 2));
+            prettyPrint();
+          });
+        });  
+      </script>      
+      <p>That's it, actually. For the code and more information, refer to the README at <a href="https://github.com/runway7/blip">github.com/runway7/blip</a>. You can also file feature requests and bug reports on the <a href="https://github.com/runway7/blip/issues">issues page</a>.</p>
+      <p>We make no guarantees about the accuracy of the geolocation, but we think it's precise enough to be quite useful.</p>
     </div>
   </div>
   <div class="span4 column">
     <div class="piece">
       <h4>What does it cost?</h4>
       <p>
-        Blip is <strong>completely free</strong>. We run the service as a convenience to ourselves and to others. It's also <a href="https://github.com/runway7/blip">open source</a> under the MIT License, so you're free do deploy your own Blip service if you don't want to rely on ours.
+        Blip is <strong>completely free</strong>. We run the service as a convenience to ourselves and to others. It's also <a href="https://github.com/runway7/blip">open source</a> under the MIT License, so you're free to deploy your own Blip service if you don't want to rely on ours.
       </p>
     </div>
     <div class="piece">
@@ -32,7 +42,7 @@
           Quick Geolocation
         </li>
         <li>
-          Determine Browser capabilities
+          Determine Browser capabilities (soon)
         </li>
         <li>
           Analytics

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Runway 7{% endblock %}
 {% block header %}
-<div class="tagline">Services and Tools for Programmers</div>  
+<div class="tagline">Services and Tools for Programmers</div>
 {% endblock %}
 {% block content %}
 <section class="row">
@@ -12,14 +12,14 @@
       <section class="info">
         Fetch meta and social information about any webpage via a JSON API. Perfect for showing link information and thumbnails, or for testing shareability.
       </section>
-    </a>      
-    <a class="app" href="/switchboard">
-      <h3 class="heading">Switchboard</h3>
-      <p class="tagline">Recommendations API</p>
+    </a>
+    <a href="/blip" class="app">
+      <h3 class="heading">Blip</h3>
+      <p class="tagline">User metadata API</p>
       <section class="info">
-        Give your users instant recommendations using this fast JSON API. Simply send in your existing user-thing relationships as they happen, and Switchboard will provide personalized recommendations, suggest friends and group similar things.
+        Instantly get information about a user's location, device, capabilities and other info via a simple JSON API.
       </section>
-    </a>   
+    </a>
   </div>
   <div class="span4">
     <a class="app" href="http://hangar.runway7.net">
@@ -28,21 +28,14 @@
       <section class="info">
         Learn about the way that the R7 products are built and see how they work. There's also programming guides and how-to's for a variety of stacks and languages.
       </section>
-    </a>  
-     <a class="app" href="/controller">
-      <h3 class="heading">Controller</h3>
-      <p class="tagline">Cost Efficent AWS/Ec2 scaling</p>
+    </a>    
+    <a class="app" href="/switchboard">
+      <h3 class="heading">Switchboard</h3>
+      <p class="tagline">Recommendations API</p>
       <section class="info">
-        Cheaply scale on AWS by using Spot Instances. Controller examines your AutoScaling group instructions and fulfills them using Spot Instances to give you big bangs for small bucks.
+        Give your users instant recommendations using this fast JSON API. Simply send in your existing user-thing relationships as they happen, and Switchboard will provide personalized recommendations, suggest friends and group similar things.
       </section>
-    </a>       
-    <a class="app" href="/signs">
-      <h3 class="heading">Signs</h3>
-      <p class="tagline">Scalable image management</p>
-      <section class="info">
-        Use Signs to manage your images - it autmatically handles storage, resizing and high performance CDN based serving.
-      </section>
-    </a>       
+    </a>
   </div>
   <div class="span4">
     <a class="app" href="/searchlight">
@@ -51,26 +44,19 @@
       <section class="info">
         Instantly search your data using our JSON API. Upload your text or HTML documents and search them at unlimited scale.
       </section>
-    </a>    
+    </a>
     <a class="app" href="/satellite">
       <h3 class="heading">Satellite</h3>
       <p class="tagline">Scalable message broadcasting</p>
       <section class="info">
         Broadcast JSON messages to millions of web clients in near-real-time. Great for journalism, sports, media, liveblogs and any other site that sends out live information.
       </section>
-    </a>    
-    <a href="/blip" class="app">
-      <h3 class="heading">Blip</h3>
-      <p class="tagline">User metadata API</p>
-      <section class="info">
-        Instantly get information about a user's location, device, capabilities and other info via a simple JSON API.
-      </section>
-    </a>   
+    </a>
   </div>
-  
 </section>
 {% endblock %}
 {% block footer %}
-<p><a href="https://twitter.com/#!/runway_7">Follow @runway_7</a> for news and updates. Runway&nbsp;7 is <a href="http://www.sudhirjonathan.com">Sudhir Jonathan</a>'s code and design laboratory.</p>
-
+<p>
+  <a href="https://twitter.com/#!/runway_7">Follow @runway_7</a> for news and updates. Runway&nbsp;7 is <a href="http://www.sudhirjonathan.com">Sudhir Jonathan</a>'s code and design laboratory.
+</p>
 {% endblock %}

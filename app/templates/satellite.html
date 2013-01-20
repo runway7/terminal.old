@@ -3,4 +3,47 @@
 {% block header %}
 <div class="tagline">Scalable Message Broadcasting</div>  
 {% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+<div class="row details">
+  <div class="span8 column">
+    <div class="piece">
+      <h4>What is Satellite?</h4>
+      <p>Satellite is a large scale web broadcasting service. It lets your send JSON messages to millions of online subscribers in near-real-time.</p>
+      <p>While there are a lot of websocket and server side event based messaging services on the market today, Satellite stands out because of it's emphasis on horizontal scalability: the strong correlation between cost and the number of simultaneous connections has been removed. This means that you can scale to sending messages to millions of users while paying only based on the number of deliveries.</p>
+    </div>
+    <div class="piece">
+      <h4>Availability</h4>                  
+      <p>Satellite is currently under construction. If you'd like us to let you know when it's ready for beta testing, <a href="https://twitter.com/intent/user?screen_name=runway_7">follow @runway_7</a> or <a href="http://eepurl.com/bP1f5">join the mailing list</a>.</p>      
+    </div>
+  </div>
+  <div class="span4 column">
+    <div class="piece">
+      <h4>What does it cost?</h4>
+      <p>Satellite will have a simple pricing scheme of <strong>USD $1 per 1,000,000 messages</strong> delivered or received. No startup, setup, max-connection or any other costs.</p>
+    </div>
+    <div class="piece">
+      <h4>What can I do with it?</h4>
+      <ul>
+        <li>
+          Start a live news ticker
+        </li>
+        <li>
+          Sports commentary
+        </li>
+        <li>
+          Live blogs
+        </li>
+        <li>
+          Event announcements
+        </li>
+        <li>
+          Live notice boards
+        </li>
+        <li>
+          Stock / weather feeds
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

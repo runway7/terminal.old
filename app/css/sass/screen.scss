@@ -3,7 +3,7 @@
 @import "styles";
 @import "prettify";
 
-$base: #666;
+$base: #333;
 $headings: #333;
 $links: #000;
 
@@ -24,12 +24,14 @@ body {
   line-height: 1.618;
   background: url(/stylesheets/images/concrete_wall_3.png) fixed;
   color: $base;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $headings;
   text-transform: uppercase;
   font-family: $headfont;
+  font-weight: 700;
 }
 
 
@@ -43,10 +45,11 @@ header {
   // text-align: center;
   .tagline {
     font-size: 1.618rem;    
+    color: #666;
   }
   border-bottom: thin solid #ccc;
   padding: 1.618rem;
-  padding-bottom: 2.381rem;
+  padding-bottom: 1.618rem;
   margin-bottom: 1.618rem;
   background: rgba(0,0,0,0.05);
 }
@@ -68,6 +71,9 @@ a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    .heading {
+      text-decoration: underline;
+    }
   }
   .heading{
     // text-align: center;
@@ -77,7 +83,7 @@ a {
   .tagline {
     // text-align: center;
     font-size: 1.381rem;    
-    color: $base;
+    color: #666;
   }
   .info {
     height: 0;
@@ -99,7 +105,10 @@ code {
 }
 
 footer {
-  
+  margin: 1.618rem 0;
+  a {
+    font-weight: 400;
+  }
 }
 
 .details {
@@ -122,7 +131,7 @@ footer {
     .piece {
       margin-bottom: 2.618rem;
       h4 {
-        margin-bottom: 1.168rem;
+        margin-bottom: 0.618rem;
       }
     }
   }
@@ -138,9 +147,14 @@ footer {
     border: none;
     padding: 0.618rem;
     margin: 0;
+    background: rgba(250,250,250,0.5);
   }
 }
 
 code {
   font-size: 1em;
+}
+
+hr {  
+  border: thin solid #ddd;
 }

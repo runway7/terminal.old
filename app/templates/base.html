@@ -10,10 +10,12 @@
     <meta property="fb:admins" content="500888585" />
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href='//fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <script src="/scripts/prettify.js" type="text/javascript" charset="utf-8" async defer></script>    
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script src="/scripts/prettify.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="/scripts/jquery.js" type="text/javascript" charset="utf-8"></script>    
+
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-940809-17']);
@@ -21,7 +23,7 @@
     _gaq.push(['_trackPageview']);    
   </script>
   </head>
-  <body onload="prettyPrint()">
+  <body>
     <div id="container">
       <header>
         <div class="container">
@@ -30,7 +32,12 @@
         </div>
       </header>
       <div class="container">{% block content %}{% endblock %}</div>
-      <footer><div class="container">{% block footer %}{% endblock %}</div></footer>
+      <footer><div class="container">{% block footer %}
+        <hr/>
+        <p>
+        <a href="https://twitter.com/#!/runway_7">Follow @runway_7</a> for news and updates. Runway&nbsp;7 is <a href="http://www.sudhirjonathan.com">Sudhir Jonathan</a>'s code and design laboratory.
+        </p>
+        {% endblock %}</div></footer>
     </div>
     <script type="text/javascript">
     (function() {
@@ -52,5 +59,8 @@
         s.parentNode.insertBefore(t, s);
       })();
     </script>
+    <script>$(function(){
+      prettyPrint();
+    });</script>
   </body>
 </html>

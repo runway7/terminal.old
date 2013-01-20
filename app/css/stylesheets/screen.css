@@ -7556,118 +7556,134 @@ body {
   font-family: "Ubuntu", sans-serif;
   line-height: 1.618;
   background: url(/stylesheets/images/concrete_wall_3.png) fixed;
-  color: #666666;
+  color: #333333;
+  font-weight: 300;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #333333;
   text-transform: uppercase;
   font-family: "Play";
+  font-weight: 700;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .tagline {
   font-family: "Ubuntu Condensed", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 header {
   border-bottom: thin solid #cccccc;
   padding: 1.618rem;
-  padding-bottom: 2.381rem;
+  padding-bottom: 1.618rem;
   margin-bottom: 1.618rem;
   background: rgba(0, 0, 0, 0.05);
 }
-/* line 44, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 header .tagline {
   font-size: 1.618rem;
+  color: #666;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 a {
   color: black;
   text-decoration: none;
 }
-/* line 56, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 a:visited, a:active {
   color: black;
 }
-/* line 60, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .app {
   display: block;
   margin-bottom: 1.618rem;
   padding-bottom: 1.618rem;
   border-bottom: thin solid #cccccc;
 }
-/* line 67, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .app:hover {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
-/* line 72, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
+.app:hover .heading {
+  text-decoration: underline;
+}
+/* line 78, ../sass/screen.scss */
 .app .heading {
   margin-bottom: 0;
   color: #333333;
 }
-/* line 77, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .app .tagline {
   font-size: 1.381rem;
-  color: #666666;
+  color: #666;
 }
-/* line 82, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .app .info {
   height: 0;
   overflow: hidden;
 }
 
-/* line 97, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 code {
   font-family: "Ubuntu Mono", monospace;
 }
 
-/* line 106, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
+footer {
+  margin: 1.618rem 0;
+}
+/* line 109, ../sass/screen.scss */
+footer a {
+  font-weight: 400;
+}
+
+/* line 115, ../sass/screen.scss */
 .details strong {
   font-weight: 500;
 }
-/* line 109, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .details ul li {
   line-height: 1.618;
 }
-/* line 112, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .details a {
   border-bottom: thin dotted #333333;
   color: inherit;
 }
-/* line 115, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .details a:hover {
   color: black;
   text-decoration: none;
   border-bottom: thin solid #333333;
 }
-/* line 122, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 .details .column .piece {
   margin-bottom: 2.618rem;
 }
-/* line 124, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 .details .column .piece h4 {
-  margin-bottom: 1.168rem;
+  margin-bottom: 0.618rem;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .code {
   overflow-x: auto;
   margin: 1.618rem 0;
 }
-/* line 134, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .code pre.prettyprint {
   overflow-x: auto;
   white-space: pre;
@@ -7675,9 +7691,15 @@ code {
   border: none;
   padding: 0.618rem;
   margin: 0;
+  background: rgba(250, 250, 250, 0.5);
 }
 
-/* line 144, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 code {
   font-size: 1em;
+}
+
+/* line 158, ../sass/screen.scss */
+hr {
+  border: thin solid #dddddd;
 }

@@ -3,4 +3,34 @@
 {% block header %}
 <div class="tagline">Cost Efficent AWS/Ec2 scaling</div>  
 {% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+<div class="row details">
+  <div class="span8 column">
+    <div class="piece">
+      <h4>What is Controller?</h4>
+      <p>Amazon Web Services and EC2 have revolutionized the way we deploy and scale clouds. The auto scaling group feature allows you to define scaling parameters that are applied to your instances to scale them up down automatically, based on parameters like CPU and memory usage. Or you can choose to create your scaling group based on spot rates instead - where you scale up and down when the price for unused capacity falls into the thresholds you set.</p>
+      <p>What you cannot do, though, is fullfil your mission critical scaling needs with spot instances. Controller allows you to do just that: it examines your auto scaling group configurations and then take takes over the management of your cloud - except that it drives your cost down by aggressively attempting to meet your scaling requirements using spot instances as much as possible.</p>
+    </div>
+    <div class="piece">
+      <h4>Availability</h4>                  
+      <p>Controller is currently under construction. If you'd like us to let you know when it's ready for beta testing, do follow @runway_7 or join the mailing list.</p>      
+    </div>
+  </div>
+  <div class="span4 column">
+    <div class="piece">
+      <h4>What does it cost?</h4>
+      <p>
+        Rather than charge a fixed rate for Controller, we'd like to put our money where our mouth is. Controller will only charge you if it saves you money, and will charge only <strong>20%</strong> of the actual savings it has created for you.
+      </p>
+    </div>
+    <div class="piece">
+      <h4>What can I do with it?</h4>
+      <ul>
+        <li>
+          Save a lot of money.
+        </li>        
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
